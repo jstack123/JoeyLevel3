@@ -43,32 +43,50 @@ public class TextUndoRedo implements KeyListener {
 		frame.addKeyListener(this);
 		frame.setVisible(true);
 		frame.setSize(500, 200);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 	
-		if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-			String text = label.getText();
-			char lastCharacter = text.charAt(text.length()-1);
-			String leftOverChar = text.substring(0, text.length()-1);
-			characters.push(lastCharacter);
-			label.setText(leftOverChar);
-			System.out.println(lastCharacter);
-			System.out.println(leftOverChar);
-		} else {
-			char key = e.getKeyChar();
-			label.setText(label.getText() + key);
-			System.out.println(key);
-		}
-
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub 
+		String text = label.getText();
+		if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+			
+			String newText = text.substring(0, text.length()-1);
+			char lastCharacter = text.charAt(text.length()-1);
+			label.setText(newText);
+			System.out.println(newText);
+			characters.push(lastCharacter);
+			
+		//	char lastCharacter = text.charAt(text.length()-1);
+		//	String leftOverChar = text.substring(0, text.length()-1);
+			//characters.push(lastCharacter);
+			//label.setText(leftOverChar);
+			//.out.println(lastCharacter);
+			//System.out.println(leftOverChar);
+		} else if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+			if(characters.isEmpty() == true) {
+				System.out.println("There are no more characters that you can undo.");
+			}
+			
+			char top  = characters.pop();
+			label.setText(label.getText() + top);
+			System.out.println("undo");
+		}
+		else {
+			char key = e.getKeyChar();
+			label.setText(label.getText() + key);
+			System.out.println(key);
+			
 		
+			
+		}
 
 	}
 
