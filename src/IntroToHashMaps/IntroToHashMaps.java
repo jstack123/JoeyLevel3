@@ -3,13 +3,23 @@ package IntroToHashMaps;
 import java.util.HashMap;
 
 public class IntroToHashMaps {
+	public static void main(String[] args) {
+		HashMap<Integer, Double> squareRoots = new HashMap<Integer, Double>();
+		for (int i = 0; i < 501; i++) {
+			squareRoots.put(i, Math.sqrt(i));
+		}
+		for (Integer s : squareRoots.keySet()) {
+			System.out.println("The square Root of " + s + " is " + squareRoots.get(s));
+		}
+	}
 	// 1. Create a HashMap called roots with Integers for the keys and Doubles
 	// for the values.
-	HashMap<Integer, Double> keyValues = new HashMap<Integer, Double>();
+	
 	// 2. Using a for-loop, add 500 entries to your HashMap. The key entry will
 	// be the
 	// current iteration of the loop (i). The value entry will be the square
 	// root of i.
+	
 	
 	// 3. Iterate through all the entries in your HashMap displaying the keys
 	// with their respective
