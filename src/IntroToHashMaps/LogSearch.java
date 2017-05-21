@@ -96,7 +96,10 @@ public class LogSearch implements ActionListener{
 			String removeSearchedID = JOptionPane.showInputDialog("Enter an ID in the space below to remove it.");
 			int searchedIDRemove = Integer.parseInt(removeSearchedID);
 			if(entries.keySet().contains(searchedIDRemove)) {
-				
+				entries.remove(searchedIDRemove);
+				JOptionPane.showMessageDialog(null, "ID: " + searchedIDRemove + " has been removed from the list");
+			} else {
+				JOptionPane.showMessageDialog(null, "Sorry, this ID does not exist is the list");
 			}
 		}
 	}
