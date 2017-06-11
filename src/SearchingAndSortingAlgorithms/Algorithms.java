@@ -52,9 +52,43 @@ public class Algorithms {
 		return false;
 	}
 
-//	public static double sortScores(List<Double> results) {
-//	
-	//}
-	//try to sort the results using the slower way
+	public static List<Double> sortScores(List<Double> results) {
+		for (int i = 0; i < results.size() - 1; i++) {
+			for (int j = i + 1; j < results.size(); j++) {
+				if (results.get(i) > results.get(j)) {
+					double temp = results.get(i);
+					results.set(i, results.get(j));
+					results.set(j, temp);
+				}
+			}
+		}
+		return results;
+	}
+
+	public static List<String> sortDNA(List<String> unsortedSequences) {
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			for (int j = i + 1; j < unsortedSequences.size(); j++) {
+				if (unsortedSequences.get(i).length() > unsortedSequences.get(j).length()) {
+					String temp = unsortedSequences.get(i);
+					unsortedSequences.set(i, unsortedSequences.get(j));
+					unsortedSequences.set(j, temp);
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+	
+	public static List<String> sortWords(List<String> words){
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = i+1; j < words.size(); j++) {
+				if(words.get(i).compareTo(words.get(j))>0) {
+					String temp = words.get(i);
+					words.set(i, words.get(j));
+					words.set(j, temp);
+				}
+			}
+		}
+		return words;
+	}
 	// Add other methods here
 }
