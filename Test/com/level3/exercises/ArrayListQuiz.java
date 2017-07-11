@@ -30,10 +30,10 @@ public class ArrayListQuiz extends TestCase {
 
 	public void testGetSomethingFromList() throws Exception {
 		ArrayList testList = new ArrayList();
-		testList.add(new String());
+		testList.add(" A");
 		testList.add("natch");
 		testList.add(new String());
-		assertEquals("natch", LearningArrayLists.getItem(testList, 1));
+		assertEquals(" A", LearningArrayLists.getItem(testList, 0));
 	}
 
 	public void testListIteration() throws Exception {
