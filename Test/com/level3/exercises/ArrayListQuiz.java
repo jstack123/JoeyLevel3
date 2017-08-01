@@ -85,8 +85,8 @@ public class ArrayListQuiz extends TestCase {
 		ArrayList<Integer> testList = LearningArrayLists.createTypedArrayList();
 		testList.add(new Integer(6));
 		testList.add(new Integer(6));
-		testList.add(new Integer(6));
-		assertEquals(new Integer(18), LearningArrayLists.addAllInteger(testList));
+		testList.add(new Integer(7));
+		assertEquals(new Integer(19), LearningArrayLists.addAllInteger(testList));
 	}
 
 	public void testConcatenateStrings() throws Exception {
