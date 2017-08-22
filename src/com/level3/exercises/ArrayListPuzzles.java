@@ -1,13 +1,17 @@
 package com.level3.exercises;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ArrayListPuzzles implements KeyListener {
+import javax.swing.JOptionPane;
+
+public class ArrayListPuzzles implements ActionListener, KeyListener {
 	public static void main(String[] args) {
-		ArrayList<String> food = new ArrayList<String>();
+		/*ArrayList<String> food = new ArrayList<String>();
 		food.add("Steak/pork");
 		food.add("Salads");
 		food.add("fruits and veggies");
@@ -21,7 +25,20 @@ public class ArrayListPuzzles implements KeyListener {
 		int r = random.nextInt(food.size());
 
 		System.out.println("You should eat " + food.get(r) + " tonight.");
+*/
+		
+		JOptionPane.showMessageDialog(null, "Press space to hear the joke");
+	} 
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		
 		ArrayList<String> jokes = new ArrayList<String>();
 		ArrayList<String> punchlines = new ArrayList<String>();
 
@@ -33,31 +50,36 @@ public class ArrayListPuzzles implements KeyListener {
 		punchlines.add("Ground beef.");
 		punchlines.add("Bison.");
 		punchlines.add("Because the 'p' is silent.");
+		
 		Random randomJokes = new Random();
 		Random randomPunchlines = new Random();
 
-		int rJ = random.nextInt(jokes.size());
-		int rP = random.nextInt(punchlines.size());
-
+		int rN= randomJokes.nextInt(jokes.size());
+		int rP = randomPunchlines.nextInt(punchlines.size());
+		String r1 = jokes.get(rN);
+		String r2 = punchlines.get(rN);
+		
+		if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+			System.out.println("blahblah");
+			JOptionPane.showMessageDialog(null, r1);
+			JOptionPane.showMessageDialog(null, r2);
+		 }
+		
+		
 	}
+	
+		
 
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// if (e.VK_SPACE) {
-
-		// }
-
-	}
+	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
