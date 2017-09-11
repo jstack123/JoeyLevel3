@@ -47,10 +47,50 @@ public class Algorithms {
 		return "";
 	}
 
-	/*
-	 * public static boolean containsSOS(List<String> message) { for (int i = 0; i < message.size(); i++) { if
-	 * (message.get(i).contains("...---...")) {
-	 * 
-	 * } } }
-	 */
+	public static boolean containsSOS(List<String> message) {
+		for (int i = 0; i < message.size(); i++) {
+			if (message.get(i).contains("... --- ...")) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public static double testSort(List<Double> results) {
+		for (int i = 0; i < results.size(); i++) {
+			for (int j = i+1; j < results.size(); j++) {
+				if (results.get(j)>results.get(i)) {
+					double temp = results.get(i);
+					results.set(i, results.get(i));
+					results.set(j, temp);
+				}
+			}
+		}
+		return -1;
+	}
+	public static List<String> sortDNA(List<String> sortedSequencesL) {
+		for (int i = 0; i < sortedSequencesL.size(); i++) {
+			for (int j = i+1; j < sortedSequencesL.size(); j++) {
+				if (sortedSequencesL.get(j).length() > sortedSequencesL.get(i).length()) {
+					 String temp = sortedSequencesL.get(i);
+					 sortedSequencesL.set(i, sortedSequencesL.get(i));
+					 sortedSequencesL.set(j, temp);
+				}
+			}
+		}
+	return sortedSequencesL;
+	}
+	public static String sortWords(List<String> words) {
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = i+1; j < words.size(); j++) {
+				if (words.get(j).compareTo(words.get(i)) > 0) {
+					String temp = words.get(i);
+					words.set(i, words.get(i));
+					words.set(j, temp);
+				}
+				
+			}
+		}
+		return "";
+	}
+
 }
